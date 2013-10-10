@@ -22,7 +22,7 @@ module ActiveRecord
             condition = condition.or(and_condition)
           end
 
-          scope = scope.where(condition)
+          scope = self.scope.where(condition)
 
           if method == :delete_all
             update_counter(-scope.delete_all)
